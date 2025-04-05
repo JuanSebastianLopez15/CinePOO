@@ -11,6 +11,10 @@ package autonoma.cinepoo.exceptions;
  * @version 1.0
  */
 public class EntradaCineMenorCero extends RuntimeException {
+    /**
+     * Este constructor se usa cuando se detecta un valor invalido para una entrada de cine.
+     *
+     */
     public EntradaCineMenorCero(){
         super("El valor de la entrada es menor a 0. Por favor, ingrese un valor igual o mayor a 0");
     }
