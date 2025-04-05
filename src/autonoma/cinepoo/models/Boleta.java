@@ -10,6 +10,6 @@ package autonoma.cinepoo.models;
  * @since 5042025
  * @version 1.0
  */
-public abstract class Usuario {
+public class Boleta {
     
 }
