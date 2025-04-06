@@ -1,4 +1,4 @@
-package autonoma.cinepoo.models;
+package autonoma.taquilladelcine.models;
 
 public class PrimeraFuncion extends Funcion {
     public PrimeraFuncion() {

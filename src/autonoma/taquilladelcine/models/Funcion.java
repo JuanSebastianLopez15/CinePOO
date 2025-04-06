@@ -1,4 +1,4 @@
-package autonoma.cinepoo.models;
+package autonoma.taquilladelcine.models;
 
 public abstract class Funcion {
     protected float porcentajeDeDescuento;

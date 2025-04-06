@@ -1,4 +1,4 @@
-package autonoma.cinepoo.models;
+package autonoma.taquilladelcine.models;
 
 public class UsuarioAdulto extends Usuario {
     public UsuarioAdulto() {
