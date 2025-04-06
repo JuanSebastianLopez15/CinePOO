@@ -11,18 +11,15 @@ package autonoma.taquilladelcine.models;
  * @version 1.0
  */
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Factura {
     private int idFactura;
-    private Date fecha;
     private List<Venta> ventas = new ArrayList<>();
     private float valorTotal;
 
     public Factura(int idFactura) {
         this.idFactura = idFactura;
-        this.fecha = new Date();
     }
 
     public void agregarVenta(Venta v) {
@@ -41,7 +38,6 @@ public class Factura {
     public String generarDetalleFactura() {
         StringBuilder sb = new StringBuilder();
         sb.append("Factura #: ").append(idFactura).append("\n");
-        sb.append("Fecha: ").append(fecha).append("\n");
         for (Venta v : ventas) {
             sb.append("Venta -> Total: ").append(v.getPrecioTotal()).append("\n");
         }
