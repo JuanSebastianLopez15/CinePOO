@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package autonoma.cinepoo.models;
 
-/**
- *
- * @author Asus
- */
-public class Usuario {
-    
+public abstract class Usuario {
+    protected float valorDeDescuento;
+
+    public Usuario(float valorDeDescuento) {
+        this.valorDeDescuento = valorDeDescuento;
+    }
+
+    public abstract float calcularValorDescuento(float porcentaje);
+    public float getValorDeDescuento() {
+        return valorDeDescuento;
+    }
 }
