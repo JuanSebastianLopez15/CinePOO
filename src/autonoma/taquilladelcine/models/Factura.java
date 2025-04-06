@@ -1,50 +1,78 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package autonoma.taquilladelcine.models;
 
-/**
- *
- * @autor Juan Sebastian Lopez Guzman y Cristian Salazar Arenas
- * @since 5042025
- * @version 1.0
- */
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Creación de la clase Factura
+ *
+ * @author      Juan Sebastian Lopez Guzman y Cristian Camilo Salazar Arenas
+ * @since       06042025
+ * @version     1.0
+ */
 public class Factura {
+    /** Id único para cada factura */
     private int idFactura;
-    private List<Venta> ventas = new ArrayList<>();
+    /** Lista de todas las ventas incluidas en la factura */
+    private ArrayList<Venta> ventas;
+    /** Valor total de todas las ventas */
     private float valorTotal;
 
+    /**
+     * Constructor de la clase Factura
+     *
+     * @param idFactura  Id de la factura
+     * @since 06042025
+     */
     public Factura(int idFactura) {
         this.idFactura = idFactura;
+        this.ventas = new ArrayList<>();
     }
 
-    public void agregarVenta(Venta v) {
-        ventas.add(v);
+    /**
+     * Agrega una venta a la factura
+     *
+     * @param venta  Instancia de Venta a agregar
+     * @since 06042025
+     */
+    public void agregarVenta(Venta venta) {
+        ventas.add(venta);
     }
 
+    /**
+     * Calcula el total de todas las ventas
+     *
+     * @return Valor total de la factura
+     * @since 06042025
+     */
     public float calcularTotal() {
         float total = 0f;
-        for (Venta v : ventas) {
-            total += v.getPrecioTotal();
+        for (Venta venta : ventas) {
+            total += venta.getPrecioTotal();
         }
         valorTotal = total;
         return valorTotal;
     }
 
+    /**
+     * Genera el detalle de la factura como texto
+     *
+     * @return Detalle de la factura
+     * @since 06042025
+     */
     public String generarDetalleFactura() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Factura #: ").append(idFactura).append("\n");
-        for (Venta v : ventas) {
-            sb.append("Venta -> Total: ").append(v.getPrecioTotal()).append("\n");
+        String detalle = "Factura #: " + idFactura + "\n";
+        for (Venta venta : ventas) {
+            detalle += "Venta -> Total: " + venta.getPrecioTotal() + "\n";
         }
-        sb.append("Total Factura: ").append(valorTotal).append("\n");
-        return sb.toString();
+        detalle += "Total Factura: " + valorTotal + "\n";
+        return detalle;
     }
 
+    /**
+     * Imprime la factura por consola
+     *
+     * @since 06042025
+     */
     public void imprimirFactura() {
         System.out.println(generarDetalleFactura());
     }
