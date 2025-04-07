@@ -11,26 +11,38 @@ import autonoma.taquilladelcine.models.UsuarioNinio;
 import autonoma.taquilladelcine.models.Venta;
 
 /**
- *
- * @autor Juan Sebastian Lopez Guzman y Cristian Salazar Arenas
- * @since 5042025
+ * Clase principal que inicia la aplicación de la taquilla del cine.
+ * Contiene el método main para ejecutar el flujo básico de ventas.
+ * 
+ * @author Juan Sebastian Lopez Guzman y Cristian Salazar Arenas
+ * @since 05042025
  * @version 1.0
  */
 public class TaquillaDelCine {
+    /**
+     * Punto de entrada principal para la aplicación de taquilla de cine.
+     * Demuestra el flujo básico de:
+     * -Creación de instancias de cine, película y función
+     * -Registro de elementos en el cine
+     * -Proceso de venta con boletas
+     * -Generación e impresión de factura
+     * 
+     * @param args Argumentos de línea de comandos (no utilizados)
+     */
     public static void main(String[] args) {
         Cine cine = new Cine("Mi Cine");
-        Pelicula p1 = new Pelicula("Matrix", 10000f);
-        cine.agregarPelicula(p1);
+        Pelicula pelicula = new Pelicula("Matrix", 10000f);
+        cine.agregarPelicula(pelicula);
 
-        Funcion f1 = new PrimeraFuncion();
-        cine.agregarFuncion(f1);
+        Funcion primeraFuncion = new PrimeraFuncion();
+        cine.agregarFuncion(primeraFuncion);
 
-        Usuario u1 = new UsuarioNinio();
-        cine.agregarUsuario(u1);
+        Usuario usuarioNinio = new UsuarioNinio();
+        cine.agregarUsuario(usuarioNinio);
 
-        Boleta b1 = new Boleta(f1, u1, p1);
+        Boleta boleta = new Boleta(primeraFuncion, usuarioNinio, pelicula);
         Venta venta = new Venta();
-        venta.agregarBoleta(b1);
+        venta.agregarBoleta(boleta);
         venta.calcularPrecioTotal();
         cine.registrarVenta(venta);
 
