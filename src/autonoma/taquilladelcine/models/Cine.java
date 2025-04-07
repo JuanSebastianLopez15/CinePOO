@@ -83,7 +83,7 @@ public class Cine {
         try {
             venta.calcularPrecioTotal();
             ventas.add(venta);
-            System.out.println("Venta registrada con éxito.");
+            System.out.println("Venta registrada con exito.");
         } catch (EntradaCineMenorCeroException e) {
             System.out.println("Error al registrar la venta: " + e.getMessage());
         }
